@@ -6,3 +6,7 @@ Usage::
     tree = api.url_info("www.domain.com", "Rank", "LinksInCount")
     elem = tree.find("//{%s}StatusCode" % api.NS_PREFIXES["alexa"])
     assert elem.text == "Success"
+    
+or::
+    
+    tree = api.url_info("www.domain.com", datetime.date(2012,1,1) )
