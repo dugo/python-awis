@@ -110,6 +110,16 @@ class AwisApi(object):
         }
         return self.request(params, **kwargs)
 
+    def traffic_history(self,url,start,range=31,**kwargs):
+        params = {
+            "Action": "TrafficHistory",
+            "Url": url,
+            "Start": start.strftime("%Y%m%d"),
+            "Range": range,
+            "ResponseGroup": "History",
+        }
+        return self.request(params, **kwargs)
+        
     @staticmethod
     def _get_timestamp():
         return datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
